@@ -6,8 +6,13 @@ and projects more effectively.
 Functional capabilities 
 
 ★ You can create/update/delete projects 
+
 ★ You can add tasks to нщгк project 
+
 ★ You can update/delete tasks 
+
 ★ You can appoint deadline for your task
+
 ★ You can mark a task/project as 'done'
+
 
