@@ -1,0 +1,450 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
+  font-size: 11pt; /* Размер основного шрифта в пунктах  */
+  background-color: #F5FCBA; /* Цвет фона веб-страницы */
+  color: #333; /* Цвет основного текста */ 
+  background: #eeeeee url("image/siteBackground.png") 0 0 repeat;
+  background-size: 100% 100%;
+}
+h1{
+  color: #a52a2a; /* Цвет заголовка */
+  font-size: 24pt; /* Размер шрифта в пунктах */
+  font-family: Georgia, Times, serif; /* Семейство шрифтов */
+  font-weight: normal; /* Нормальное начертание текста  */
+}
+
+h2{
+  color: #a52a2a; 
+  font-size: 23pt; 
+  font-family: Georgia, Times, serif; 
+  font-weight: normal; 
+  line-height: 1%;
+  text-shadow:  0 0 25px #D59595;
+}
+
+h5{
+	color: #grey; 
+	font-weight:lighter;
+	line-height: 1%;
+	font-size: ;
+  }
+
+
+.createField {
+    width: 100%; /* Ширина поля с кнопкой */
+    border: none; /* Параметры рамки */
+    min-height: 25px; /* Минимальная высота */
+   }
+ 
+
+#forInput{
+	height: 30px;
+	 border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 79%; /* Ширина поля */
+    vertical-align: middle; /* Выравнивание по середине */
+	background: #fff; /* Цвет фона */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Параметры тени */
+	padding: 10px; /* Поля вокруг текста */
+} 
+
+#forButton{
+  
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  height: 30px; 
+  width: 20%; 
+  border-style: solid none;
+  border: none; 
+ -webkit-appearance: none; 
+  background: linear-gradient(#82b99b, #82b99b) #82b99b;
+  box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5); 
+  border-radius: 0px 7px 7px 0px; 
+} 
+#forButton:hover { background: linear-gradient(#2BEE83, #82b99b) #2BEE83; }
+#forButton:active { background: linear-gradient(#263CC9, #263CC9) #263CC9; }
+   
+
+ #buttonExit{
+  
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  height: 25px; 
+  width: auto; 
+  border-style: solid none;
+  border: none; 
+ -webkit-appearance: none; 
+  background: linear-gradient(#29B4D6, #263CC9) #82b99b;
+  
+  box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+} 
+#buttonExit:hover { background: linear-gradient(#2BEE83, #82b99b) #2BEE83; }
+#buttonExit:active { background: linear-gradient(#263CC9, #263CC9) #263CC9; }
+  	
+#buttonRegister{
+	 color: #fff;
+  height: auto;
+  width: 50%; 
+  border: none;
+  outline: none;
+ -webkit-appearance: none; 
+   background: #4D86E0;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+ }
+#buttonRegister:hover { background: linear-gradient(#4DD6E0, #4D86E0) #2BEE83; }
+#buttonRegister:active { 
+box-shadow: inset  0 0 10px rgba(0, 0, 0, .5); 
+background: linear-gradient(#263CC9, #263CC9) #263CC9; 
+}
+
+#buttonSign{
+	 color: #fff;
+  height: auto;
+  width: 300; 
+  border: none;
+  outline: none;
+ -webkit-appearance: none; 
+   background: #52b99b;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+ }
+#buttonSign:hover { background: linear-gradient(#2BEE83, #82b99b) #2BEE83; }
+#buttonSign:active { 
+box-shadow: inset  0 0 10px rgba(0, 0, 0, .5); 
+background: linear-gradient(#263CC9, #263CC9) #263CC9; 
+}
+
+
+   #enterForm{
+  color: #fff;
+  height: auto;
+  width: 300; 
+  border: none;
+ -webkit-appearance: none; 
+   background: #52b99b;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+}
+
+ #regForm{
+	color: #fff;
+  height: auto;
+  width: 300; 
+  border: none;
+ -webkit-appearance: none; 
+   background: #4D86E0;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+} 
+
+
+#buttonEnter{
+	 color: #fff;
+  height: auto;
+  width: 50%; 
+  border: none;
+  outline: none;
+ -webkit-appearance: none; 
+   background: #52b99b;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+ }
+#buttonEnter:hover { background: linear-gradient(#2BEE83, #82b99b) #2BEE83; }
+#buttonEnter:active { 
+box-shadow: inset  0 0 10px rgba(0, 0, 0, .5); 
+background: linear-gradient(#263CC9, #263CC9) #263CC9; 
+}
+    
+#buttonReg{
+	 color: #fff;
+  height: auto;
+  width: 300; 
+  border: none;
+  outline: none;
+ -webkit-appearance: none; 
+   background: #4D86E0;
+   box-shadow:  0 0 10px rgba(0, 0, 0, .5); 
+  border-radius: 7px 7px 7px 7px; 
+  line-height: 2;
+  font-weight:bold;
+ }
+#buttonReg:hover { background: linear-gradient(#4DD6E0, #4D86E0) #2BEE83; }
+#buttonReg:active { 
+box-shadow: inset  0 0 10px rgba(0, 0, 0, .5); 
+background: linear-gradient(#263CC9, #263CC9) #263CC9; 
+}
+  	
+
+#taskInput{
+	
+	height: 30px;
+	 border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 63%; /* Ширина поля */
+    vertical-align: middle; /* Выравнивание по середине */
+	background: #fff; /* Цвет фона */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Параметры тени */
+	padding: 10px; /* Поля вокруг текста */
+}	
+	
+	
+#calendarInput{
+	height: 30px;
+	border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 15%; /* Ширина поля */
+    vertical-align: middle; /* Выравнивание по середине */
+	height: 30px;
+	background: #fff; /* Цвет фона */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Параметры тени */
+	padding: 10px; /* Поля вокруг текста */
+} 
+	
+	
+#blueBackground {
+	color: #fff;
+    width: 50%;
+    background: #eeeeee url("image/backgroundHead.png") 0 0 repeat;
+	padding: 10px; /* Поля вокруг текста */
+	background-size: auto 100%;
+	box-shadow:  0 0 10px rgba(0,0,0,0.5), inset 0 0 0 1px #256498;
+}
+  #whiteText{
+	  color: #fff;
+	  font-size: 12pt;
+  }
+  
+#greyBackground{
+	 width: 50%;
+	 height: 33px;
+         background: #eeeeee url("image/greyBackground.png") 0 0 repeat;
+	padding: 10px; /* Поля вокруг текста */
+	background-size: auto 100%;
+	box-shadow:  0 0 10px rgba(0,0,0,0.5), inset 0 0 0 1px #A3A3A3;
+}
+
+#radius {
+	width: 50%;
+	background: #007E3E; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    border-radius: 10px; /* Уголки */
+}
+
+#projectBack{
+	width: 50%;
+	height: 25px;
+	background: #fff; /* Цвет фона */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+	cursor: pointer;
+	background-position:  middle;
+	
+	border-bottom: 3px solid #F7F8F6; /* Параметры линии  */
+     
+	background-position: bottom;
+}
+
+#projectBack:hover{
+background: #fcfed5;
+}
+
+
+
+
+ #projectBack:hover #buttonSelect{
+	 background:   url("image/select_hidden.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+ }
+
+#projectBack:hover #buttonDelete{
+	background:   url("image/delete_hidden.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+}
+
+
+#projectBack:hover #buttonRename{
+	background:   url("image/rename_hidden.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+}
+  #endOfTheTable{
+	width: 50%;
+	background: #fff; /* Цвет фона */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+	border-radius: 0px 0px 15px 15px;
+	
+  }
+  
+  
+#buttonSetDone{
+	height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+	outline: none; /* Убираем рамку при нажатии */
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	width: 100%; /* Ширина кнопки */
+   background: inherit; /* Цвет фона */
+   background-size: 100% 100%;
+    /* box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5);  Параметры тени */
+	border-radius: 4px 4px 4px 4px; 
+	visibility:inherit;
+	cursor: pointer;
+}
+#buttonSetDone:hover{
+ background:   url("image/stateOk.png");
+  visibility:visible;
+  background-size: 100% 100%;
+
+}
+
+#buttonDone{
+	 height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	width: 100%; /* Ширина кнопки */
+    background:  url("image/stateDone.png");
+	background-size: 100% 100%;
+	border-radius: 4px 4px 4px 4px; 
+	
+}
+#buttonRename{
+	height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+	outline: none;
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	width: 100%; /* Ширина кнопки */
+   background: inherit; /* Цвет фона */
+   background-size: 100% 100%;
+    /* box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5);  Параметры тени */
+	border-radius: 4px 4px 4px 4px; 
+	visibility:inherit;
+	cursor: pointer;
+}
+#buttonRename:hover{
+ background:   url("image/rename.png");
+  visibility:visible;
+  background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: contain; /* Масштабируем фон */
+
+}
+
+
+  #buttonRenameTake:hover{
+	  background:   url("image/rename.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+  }
+
+#buttonRenameTake:hover::after{
+	background: rgba(255,255,230,0.9);
+content: attr(data-title);
+position: absolute;
+right: 5%; 
+z-index: 1;
+font-size: 11px;
+padding: 5px 10px;
+border: 1px solid #333;
+
+
+}
+
+#buttonDelete{
+	height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+	outline: none;
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	width: 100%; /* Ширина кнопки */
+   background: inherit; /* Цвет фона */
+   background-size: 100% 100%;
+    /* box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5);  Параметры тени */
+	border-radius: 4px 4px 4px 4px; 
+	visibility:inherit;
+	cursor: pointer;
+}
+#buttonDelete:hover{
+ background:   url("image/delete.png");
+   background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: contain; /* Масштабируем фон */
+}
+
+#buttonSelect{
+	height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+	outline: none;
+	-webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+	width: 100%; /* Ширина кнопки */
+   background: inherit; /* Цвет фона */
+   background-size: 100% 100%;
+    /* box-shadow:  inset 0 0 5px rgba(0, 0, 0, .5);  Параметры тени */
+	border-radius: 4px 4px 4px 4px; 
+	visibility:inherit;
+	cursor: pointer;
+}
+#buttonSelect:hover{
+ background:   url("image/select.png");
+  visibility:visible;
+  background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: contain; /* Масштабируем фон */
+
+}
+#buttonDeleteTake:hover{
+	background:   url("image/delete.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+  }
+
+ #buttonSelectTake:hover{
+	background:   url("image/select.png");/* Путь к фоновому рисунку */
+    background-position:  middle; /* Положение фона */
+    background-repeat: no-repeat; /* Отменяем повторение фона */
+    background-size: auto; /* Масштабируем фон */
+    display: block; /*отобразить элемент*/
+  }
+  
+table{
+	color: #9B9293;
+	
+}
+
+footer{
+	text-align: center;
+	color: #fff;
+	height:20px; /* высота подвала */
+    margin-top: -10px;
+}	

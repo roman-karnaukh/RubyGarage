@@ -1,15 +1,39 @@
-﻿<html> 
+﻿<?php
+session_start();
+
+#Проверка сессии
+if(!$_SESSION['login']){
+	header("Location: login.php");
+	exit;
+}
+
+?>
+<?php
+# Блок выхода
+
+echo '<div align="right"><form method="POST">
+Hello, '.$_SESSION['login'].'
+<button name="submit" id="buttonExit" type="submit" value="Exit">Exit</button>
+</form></div>';
+
+if(isset($_POST['submit'])){
+session_destroy();
+header("Location: login.php");
+}
+?>
+
+<html> 
 	<head>
 		<title>My Tasks</title>
-		<link rel="stylesheet" href="syile.css" />
+		<link rel="stylesheet" href="style.css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	</head>
 	<body> 
-	<br>
+	
 	<div align="center">
-			<h1>SIMPLE TODO LISTS</h1>
-			<h4>FROM RUBY GARAGE</h4>
+			<h2>SIMPLE TODO LISTS</h2>
+			<h5>FROM RUBY GARAGE</h5>
 		</div>
 		
 		<div align="center">
@@ -22,6 +46,8 @@
 			$password = "roman123"; 
 			$dbName = "task_master_zzz_com_ua";
 			$usertable = "projects";
+                        $user = $_SESSION['login'];
+
 			//connect to db
 			$mysql_connect = mysql_connect($hostname,$username,$password);
 			if (!$mysql_connect) {
@@ -39,7 +65,7 @@
 					$name = $_POST['name_of_new_project'];
 			
 			/* запрос для вставки информации в таблицу */ 
-			$query = "INSERT INTO $usertable VALUES('$name', 'new')"; 
+			$query = "INSERT INTO $usertable VALUES('$name', 'new', '$user')"; 
 			/* Выполнить запрос. Если произойдет ошибка - вывести ее. */ 
 			mysql_query($query) or die(mysql_error()); 
 			}
@@ -52,6 +78,7 @@
 			$username = "roman_taskmaster"; 
 			$password = "roman123"; 
 			$dbName = "task_master_zzz_com_ua";
+                        $user = $_SESSION['login'];
 
 			/* Таблица MySQL, в которой хранятся данные */ 
 			$userstable = "projects"; 
@@ -63,7 +90,7 @@
 			mysql_select_db($dbName) or die(mysql_error());  
 
 			// составить запрос
-			$query = "SELECT * FROM $userstable"; 
+			$query = "SELECT * FROM $userstable WHERE user = '$user'"; 
 			/* Выполнить запрос. Если произойдет ошибка - вывести ее. */ 
 			$res = mysql_query($query) or die(mysql_error()); 
 
@@ -73,6 +100,7 @@
 			/* Напечатать всех в красивом виде*/ 
 			if ($number == 0) { 
 			 echo "<CENTER>There is no Projects</CENTER>"; 
+                         echo "<BR><BR>";
 			 echo '<div id="greyBackground">
 			<form action="" method="POST"> 
 			<div class="createField">
@@ -133,7 +161,7 @@
 				<td id="buttonDeleteTake">
 				<button type="submit" id = "buttonDelete" name="delete" value="'.$row['name'].'"></button>
 				</td>
-				<td  id="buttonRenameTake">
+				<td  id="buttonRenameTake" data-title="Click on name of the project to enter new name. For save changes, click this button">
 				<button id = "buttonRename" type="submit" name="rename" value="'.$row['name'].'"></button>
 				</td>
 				<td width="3%"></td>
@@ -159,7 +187,7 @@
 				<td id="buttonDeleteTake">
 				<button type="submit" id = "buttonDelete" name="delete" value="'.$row['name'].'"></button>
 				</td>
-				<td  id="buttonRenameTake">
+				<td  id="buttonRenameTake" data-title="Click on name of the project to enter new name. For save changes, click this button">
 				<button id = "buttonRename" type="submit" name="rename" value="'.$row['name'].'"></button>
 				</td>
 				<td width="3%"></td>
@@ -192,15 +220,21 @@
 			</script>';
 			}
 			
+
+                                      
+				// составить запрос
+			$queryDeleteTask = "DELETE FROM $userstableT WHERE $column = '$taskText'"; 
 			//УДАЛИТЬ ПРОЕКТ при нажатии на кнопку
 			if(isset($_POST['delete'])){
 				    $nameproject = $_POST['delete'];
 					$column = "name";
 					$userstable3 = "projects";
 				// составить запрос
-			$queryDeleteProject = "DELETE FROM $userstable3 WHERE $column = '$nameproject'"; 
+			$queryDeleteProject = "DELETE FROM $userstable3 WHERE $column = '$nameproject'";
+                        $queryDeleteTaskWhenDeleteProject =  "DELETE FROM tasks WHERE project_name = '$nameproject'";
 			/* Выполнить запрос. Если произойдет ошибка - вывести ее. */ 
 			$res = mysql_query($queryDeleteProject) or die(mysql_error());
+                        $res = mysql_query($queryDeleteTaskWhenDeleteProject) or die(mysql_error());
 			echo '<script language="JavaScript"> 
 			  window.location.href = "http://task-master.zzz.com.ua/RubyGarage/"
 			</script>';
@@ -218,9 +252,10 @@
 					echo "<CENTER>Please enter new name of project</CENTER>";
 				}else{
 				
-			$queryDeleteProject = "UPDATE $userstable3 SET $column = '$renamed' WHERE $column = '$nameproject'"; 
-			/* Выполнить запрос. Если произойдет ошибка - вывести ее. */ 
-			$res = mysql_query($queryDeleteProject) or die(mysql_error());
+			$queryUPDATEProject = "UPDATE $userstable3 SET $column = '$renamed' WHERE $column = '$nameproject'"; 
+			$queryUPDATETasks = "UPDATE tasks SET project_name = '$renamed' WHERE project_name = '$nameproject'";
+			$res = mysql_query($queryUPDATEProject) or die(mysql_error());
+                        $res = mysql_query($queryUPDATETasks) or die(mysql_error());
 			
 			echo '<script language="JavaScript"> 
 			  window.location.href = "http://task-master.zzz.com.ua/RubyGarage/"
@@ -332,7 +367,7 @@
 				</td>
 				<td>
 				</td>
-				<td  id="buttonRenameTake">
+				<td  id="buttonRenameTake" data-title="Click on name of the task to enter new name. For save changes, click this button">
 				<button id = "buttonRename" type="submit" name="renameTask" value="'.$row['name'].'"> </button>
 				</td>
 				<td width="5%"></td>
@@ -356,7 +391,7 @@
 				</td>
 				<td>
 				</td>
-				<td  id="buttonRenameTake">
+				<td  id="buttonRenameTake" data-title="Click on name of the task to enter new name. For save changes, click this button">
 				<button id = "buttonRename" type="submit" name="renameTask" value="'.$row['name'].'"> </button>
 				</td>
 				<td width="5%"></td>
@@ -439,8 +474,16 @@
 				
 		<br>
 		
-		<footer>
+	<br>
+
+<div style="display:none">
+<noindex>
+		
+      </body>
+
+</div>
+</noindex>
+<footer>
    ⓒ  Ruby Garage
   </footer>
-	</body>
-</html> 
+</html> 	
